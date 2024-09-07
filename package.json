@@ -1,5 +1,5 @@
 {
-    "name": "ghost-starter-theme",
+    "name": "vite-ghostcms-starter",
     "description": "A starter theme for Ghost theme development",
     "demo": "https://starter.ghost.io",
     "version": "1.0.0",
@@ -11,11 +11,11 @@
         "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
-        "dev": "rollup -c --environment BUILD:development -w",
-        "build": "rollup -c --environment BUILD:production",
-        "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
-        "test": "npx gscan .",
-        "pretest": "npm run build"
+        "dev": "vite",
+        "build": "vite build",
+        "zip": "pnpm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
+        "test": "pnpm dlx gscan theme",
+        "pretest": "pnpm run build"
     },
     "author": {
         "name": "Ghost Foundation",
@@ -36,27 +36,27 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Starter.git"
+        "url": "https://github.com/tobimori/vite-ghostcms-starter.git"
     },
-    "bugs": "https://github.com/TryGhost/Starter/issues",
-    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
+    "bugs": "https://github.com/tobimori/vite-ghostcms-starter/issues",
     "devDependencies": {
-        "@babel/core": "^7.21.0",
-        "@babel/preset-env": "^7.20.2",
-        "@rollup/plugin-babel": "^6.0.3",
-        "@rollup/plugin-commonjs": "^25.0.0",
-        "@rollup/plugin-node-resolve": "^15.0.1",
-        "@rollup/plugin-terser": "^0.4.0",
+        "@biomejs/biome": "^1.8.3",
+        "@types/node": "^22.5.4",
+        "autoprefixer": "^10.4.20",
         "bestzip": "^2.2.1",
-        "postcss": "^8.4.24",
-        "postcss-import": "^15.1.0",
-        "postcss-preset-env": "^8.0.1",
-        "rollup": "^3.18.0",
-        "rollup-plugin-livereload": "^2.0.5",
-        "rollup-plugin-postcss": "^4.0.2"
+        "postcss": "^8.4.45",
+        "tailwindcss": "^3.4.10",
+        "typescript": "^5.5.4",
+        "vite": "^5.4.3",
+        "vite-tsconfig-paths": "^5.0.1"
     },
     "browserslist": [
-        "defaults"
+        "last 2 versions",
+        ">= 0.4%",
+        "not dead",
+        "Firefox ESR",
+        "not op_mini all",
+        "not and_uc > 0"
     ],
     "config": {
         "card_assets": true,

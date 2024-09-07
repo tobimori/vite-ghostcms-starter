@@ -21,4 +21,6 @@ projectFilesBackup
 
 .DS_Store
 
-dist/
+assets/
+install
+theme/package.json
